@@ -1,0 +1,32 @@
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-[#0a2351] to-[#1e40af] relative overflow-hidden;
+  }
+
+  .gradient-bg::before {
+    content: '';
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1)_0%,transparent_60%)];
+  }
+
+  .stat-icon {
+    @apply transition-transform duration-300;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] transition-all;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] transition-all;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-xl shadow-xl p-6 max-w-lg w-full mx-auto;
+  }
+}

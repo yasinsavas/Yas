@@ -1,0 +1,52 @@
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-[#0a2351] to-[#1e40af] relative overflow-hidden;
+  }
+
+  .gradient-bg::before {
+    content: '';
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1)_0%,transparent_60%)];
+  }
+
+  .stat-card {
+    @apply bg-[#0a2351] rounded-xl p-6 relative overflow-hidden group hover:scale-105 transition-all duration-300;
+  }
+
+  .stat-icon {
+    @apply text-white/40 transition-transform duration-300;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .badge {
+    @apply px-2.5 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-[#0a2351]/10 text-[#0a2351];
+  }
+
+  .badge-success {
+    @apply bg-green-50 text-green-700;
+  }
+
+  .badge-warning {
+    @apply bg-red-50 text-red-700;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm 
+           focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] 
+           transition-all hover:border-[#0a2351]/50;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm 
+           focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] 
+           transition-all hover:border-[#0a2351]/50;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+}

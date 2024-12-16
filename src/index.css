@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-[#0a2351] rounded-xl p-6 relative overflow-hidden hover:scale-105 transition-all duration-300;
+  }
+
+  .stat-icon {
+    @apply text-white/40;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-[#0a2351] to-[#1e40af] relative overflow-hidden;
+  }
+
+  .gradient-bg::before {
+    content: '';
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1)_0%,transparent_60%)];
+  }
+
+  .table-header {
+    @apply bg-[#0a2351] text-white;
+  }
+
+  .table-header th {
+    @apply text-left p-4 text-sm font-medium text-white/90 border-r border-white/10 last:border-r-0 relative;
+  }
+
+  .table-header th::after {
+    content: '';
+    @apply absolute right-0 top-4 bottom-4 w-px bg-white/10;
+  }
+
+  .table-header th:last-child::after {
+    display: none;
+  }
+
+  .table-row {
+    @apply border-b border-gray-100 hover:bg-blue-50/30 transition-all duration-200;
+  }
+
+  .table-cell {
+    @apply p-4 text-sm relative;
+  }
+
+  .table-cell::after {
+    content: '';
+    @apply absolute right-0 top-4 bottom-4 w-px bg-gray-100;
+  }
+
+  .table-cell:last-child::after {
+    display: none;
+  }
+
+  .action-button-primary {
+    @apply p-2 text-[#0a2351] hover:bg-[#0a2351]/5 rounded-lg transition-colors;
+  }
+
+  .action-button-danger {
+    @apply p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm 
+           focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] 
+           transition-all hover:border-[#0a2351]/50;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm 
+           focus:outline-none focus:ring-2 focus:ring-[#0a2351]/20 focus:border-[#0a2351] 
+           transition-all hover:border-[#0a2351]/50;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
